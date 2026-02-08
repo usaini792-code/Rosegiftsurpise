@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        /* CSS GOES HERE */
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #5a2a2a;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 85%;
+            max-width: 400px;
+        }
+        .hidden { display: none; }
+        h1 { color: #d6334d; font-size: 1.5rem; }
+        button {
+            background-color: #ffacc1;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: white;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #noBtn { background-color: #cfcfcf; }
+        img { width: 200px; border-radius: 15px; margin: 15px 0; }
+        .warning-circle {
+            background: #ff4d4d;
+            color: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            border: 5px solid white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <h1>I'VE SOMETHING FOR YOU...</h1>
+        <p>A little surprise, made with love.</p>
+        <h2>WANNA SEE???</h2>
+        <div class="buttons">
+            <button onclick="nextPage('page2')">Yes</button>
+            <button id="noBtn" onclick="nextPage('page-no')">No</button>
+        </div>
+        <p>🌹❤️🎀🦋</p>
+    </div>
+
+    <div id="page-no" class="container hidden">
+        <img src="angry-cat.jpg" alt="Angry Cat">
+        <h2>How dare you say no?</h2>
+        <button onclick="nextPage('page1')">Try again</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <div class="warning-circle">
+            <p>⚠️ WARNING</p>
+            <p>EXTREME HAPPINESS AHEAD</p>
+        </div>
+        <h3>DO YOU STILL WANT TO TRY?</h3>
+        <button onclick="nextPage('page3')">YES</button>
+    </div>
+
+    <div id="page3" class="container hidden">
+        <img src="gift-cat.jpg" alt="Gift Cat">
+        <h2>muehehehe</h2>
+        <p>Click the gift</p>
+        <button style="font-size: 40px; background:none;" onclick="nextPage('page4')">🎁</button>
+    </div>
+
+    <div id="page4" class="container hidden">
+        <h1 style="font-size: 2rem;">HAPPY ROSE DAY<br>MY LOVE</h1>
+        <img src="roses.jpg" alt="Roses" style="width: 250px;">
+        <p>You are my favorite person! ❤️</p>
+    </div>
+
+    <script>
+        // JAVASCRIPT GOES HERE
+        function nextPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
